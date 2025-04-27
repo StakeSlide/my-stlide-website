@@ -1,3 +1,7 @@
+[src="logo.png"]
+WELCOME TO STAKE SLIDE
+
+
 window.onload = function() {
   setTimeout(() => {
     document.getElementById('welcome-screen').style.display = 'none';
