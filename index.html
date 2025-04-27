@@ -5,20 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stake Multiplier Tool</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
 
-  <div class="container">
-    <h1>Multiplier Tracker</h1>
-    <div id="greeting">Hi User!</div>
-
-    <div id="multiplier">Multiplier: x1.00</div>
-
-    <div id="countdown" class="hidden">Timer: <span id="timer">10</span> sec</div>
-
-    <button id="startButton">Start Countdown</button>
+  <!-- Welcome Screen -->
+  <div id="welcome-screen">
+    <h1>WELCOME TO STAKE SLIDE</h1>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Your Existing App -->
+  <div id="main-content" style="display: none;">
+    <div class="container">
+      <h1>Multiplier Tracker</h1>
+      <div id="greeting">Hi User!</div>
+      <div id="multiplier">Multiplier: x1.00</div>
+      <div id="countdown" class="hidden">Timer: <span id="timer">10</span> sec</div>
+      <button id="startButton">Start Countdown</button>
+    </div>
+  </div>
+
 </body>
 </html>
