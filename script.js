@@ -1,42 +1,45 @@
-const ipList = {
-  "123.123.123.123": "Ayush",
-  "111.222.333.444": "Rahul"
-};
-
-async function getUserIP() {
-  const response = await fetch('https://api.ipify.org?format=json');
-  const data = await response.json();
-  return data.ip;
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
 }
 
-async function greetUser() {
-  const userIP = await getUserIP();
-  const name = ipList[userIP] || "Guest";
-  document.getElementById('greeting').innerText = `Hi ${name}!`;
+#welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0f172a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  z-index: 1000;
+  animation: fadeOut 2s ease forwards;
+  animation-delay: 4s;
 }
 
-function simulateMultiplier() {
-  const randomMultiplier = (Math.random() * (5 - 1) + 1).toFixed(2);
-  document.getElementById('multiplier').innerText = `Multiplier: x${randomMultiplier}`;
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
-let timerInterval;
+.container {
+  padding: 20px;
+  text-align: center;
+}
 
-document.getElementById('startButton').addEventListener('click', function() {
-  document.getElementById('countdown').classList.remove('hidden');
-  
-  let timeLeft = 10;
-  document.getElementById('timer').innerText = timeLeft;
-  
-  clearInterval(timerInterval);
-  timerInterval = setInterval(() => {
-    timeLeft--;
-    document.getElementById('timer').innerText = timeLeft;
-    if (timeLeft <= 0) {
-      clearInterval(timerInterval);
-    }
-  }, 1000);
-});
+#main-content {
+  transition: opacity 1s ease;
+}
 
-greetUser();
-setInterval(simulateMultiplier, 2000);
+.hidden {
+  display: none;
+}
