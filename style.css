@@ -1,0 +1,49 @@
+body {
+  background-color: #1e2a38;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background-color: #2b3a4b;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: #00bcd4;
+}
+
+#startButton {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#startButton:hover {
+  background-color: #00a5bb;
+}
+
+.hidden {
+  display: none;
+}
+
+#multiplier, #greeting, #countdown {
+  margin-top: 20px;
+  font-size: 22px;
+}
