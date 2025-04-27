@@ -1,32 +1,119 @@
-logo.png
-WELCOME TO STAKE SLIDE
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 50%, #4776E6 100%);
+}
 
-window.onload = function() {
-  setTimeout(() => {
-    document.getElementById('welcome-screen').style.display = 'none';
-    document.getElementById('main-content').style.display = 'block';
-  }, 5000); // 5 seconds for welcome screen
-};
+/* Welcome Page Styles */
+.welcome-container {
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
 
-// Your existing multiplier tracking code...
-let multiplier = 1.0;
-const multiplierDisplay = document.getElementById('multiplier');
-const countdown = document.getElementById('countdown');
-const timerDisplay = document.getElementById('timer');
-const startButton = document.getElementById('startButton');
+.welcome-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(110, 72, 170, 0.5);
+}
 
-startButton.addEventListener('click', () => {
-  let timeLeft = 10;
-  countdown.classList.remove('hidden');
-  timerDisplay.textContent = timeLeft;
-  const countdownInterval = setInterval(() => {
-    timeLeft--;
-    timerDisplay.textContent = timeLeft;
-    if (timeLeft <= 0) {
-      clearInterval(countdownInterval);
-      countdown.classList.add('hidden');
-      multiplier += 0.1;
-      multiplierDisplay.textContent = `Multiplier: x${multiplier.toFixed(2)}`;
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    max-width: 800px;
+}
+
+.logo {
+    max-width: 200px;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.clock {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px 30px;
+    border-radius: 10px;
+    display: inline-block;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Coming Soon Page Styles */
+.coming-soon-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.curved-box {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 90%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.curved-box h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.curved-box p {
+    font-size: 1.2rem;
+    margin-top: 30px;
+    color: #fff;
+}
+
+/* Animations */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #9d50bb, 0 0 40px #9d50bb;
     }
-  }, 1000);
-});
+    to {
+        text-shadow: 0 0 15px #fff, 0 0 25px #fff, 0 0 35px #6e48aa, 0 0 45px #6e48aa;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .clock {
+        font-size: 1.5rem;
+    }
+    .curved-box h2 {
+        font-size: 1.5rem;
+    }
+}
